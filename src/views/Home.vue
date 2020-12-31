@@ -1,17 +1,31 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <new-message-form @send="addMessages" />
+    <messages-list :messages="messages" />
+    {{ messages }}
   </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import NewMessageForm from '@/components/NewMessageForm.vue'; // @ is an alias to /src
+import MessagesList from '@/components/MessagesList.vue';
 
 @Options({
   components: {
-    HelloWorld,
+    NewMessageForm,
+    MessagesList
+  },
+  data() {
+    return {
+      messages: []
+    }
+  },
+  methods: {
+    addMessages(text: string) {
+      this.messages.unshift(text);
+    }
   },
 })
 export default class Home extends Vue {}
