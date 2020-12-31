@@ -25,7 +25,7 @@ jobs:
           parallel: true
           group: Parallel 2x on ${{ matrix.os }}
           # on Mac and Linux we can use "npm start"
-          start: vue-cli-service serve
+          start: yarn serve
           # but for this particular project on Windows we need a different start command
           #start-windows: npm run start:ci:windows
           wait-on: http://localhost:8080/
