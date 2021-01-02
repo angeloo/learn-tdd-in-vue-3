@@ -1,4 +1,6 @@
-# learn-tdd-in-vue
+# learn-tdd-in-vue-3
+
+https://learntdd.in/vue/ with Vue 3 Options API
 
 ## Project setup
 ```
